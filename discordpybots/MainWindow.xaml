@@ -1,0 +1,69 @@
+﻿<Window x:Class="discordpybots.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:discordpybots"
+        mc:Ignorable="d"
+        Title="DCPyBotter" Icon="Resources\icon.ico" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Margin="0,0,0.4,0" LastChildFill="True">
+            <TextBox DockPanel.Dock="Top" Name="projectName" IsReadOnly="True" Text="Hello world" Margin="0,0,0.4,0"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" CanContentScroll="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0.4,0">
+                <TreeView BorderBrush="white">
+                    <TreeViewItem Header="Commands" >
+                        <TreeViewItem Header="test"/>
+                    </TreeViewItem><TreeViewItem Header="Custom Class" >
+                        <TreeViewItem Header="test"/>
+                    </TreeViewItem><TreeViewItem Header="Imported Libraries" >
+                        <TreeViewItem Header="test"/>
+                    </TreeViewItem>
+                </TreeView>
+            </ScrollViewer>
+        </DockPanel>
+        <DockPanel Grid.Column="2" LastChildFill="True">
+            <ToolBarTray DockPanel.Dock="top">
+                <ToolBar>
+                    <Button Width="20">
+                        <Image Source="Resources\toolbarIcons\helpButton.png"/>
+                    </Button>
+                    <Button Width="20">
+                        <Image Source="Resources\toolbarIcons\settings.png"/>
+                    </Button>
+                    <Separator/>
+                    <Button >
+                        <Image Width="15" Source="Resources\toolbarIcons\newFile.png"/>
+                    </Button>
+                    <Button>
+                        <Image Width="15" Source="Resources\toolbarIcons\openFile.png"/>
+                    </Button>
+                    <Button>
+                        <Image Width="15" Source="Resources\toolbarIcons\saveFile.png"/>
+                    </Button>
+                    <Button>
+                        <Image Width="15" Source="Resources\toolbarIcons\saveAs.png"/>
+                    </Button>
+                    <Separator/>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="15" Source="Resources\toolbarIcons\startDebug.png"/>
+                            <Border Margin="5 0 0 0">
+                                <TextBlock Name="debugtxt" Text="Debug"/>
+                            </Border>
+                        </StackPanel>
+                    </Button>
+                    <Separator/>
+                    <Button Content="Test" Click="Button_Click" VerticalAlignment="Bottom" Height="22" Margin="0,0,0,0.4"/>
+                    <Button Content="Test2" Click="Button_Click2" VerticalAlignment="Bottom" Height="22" Margin="0,0,0,0.4"/>
+                </ToolBar>
+            </ToolBarTray>
+            <DockPanel Name="maindock">
+
+            </DockPanel>
+        </DockPanel>
+    </Grid>
+</Window>

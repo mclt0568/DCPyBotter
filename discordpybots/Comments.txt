@@ -1,0 +1,3 @@
+In python:
+	Bot Client: CLIENT
+	Bot Token : TOKEN
