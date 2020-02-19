@@ -6,20 +6,37 @@ using System.Threading.Tasks;
 
 /// Rules:
 /// C Contains
-/// SW Starts With
-/// EW Ends With
-/// MT More Then
-/// LT Less Then
-/// ET Equals To
-/// CO Custom Operator
+/// S Starts With
+/// E Ends With
+/// M More Then
+/// L Less Then 
+/// I Identity
+/// X Custom Operator
 
 namespace discordpybots.CommandLoaders
 {
 	class ReplyRule
 	{
-		public ReplyRule(String Rule,String Val,String CustomOperator = "")
+		// IDictionary<Char, String> mathRulesDict = new Dictionary<Char, String>();
+		Char rule;
+		String val;
+		String customOperator;
+		public ReplyRule(Char argRule,String argVal,String argCustomOperator = "")
 		{
+			/// mathRulesDict.Add('M',">");
+			/// mathRulesDict.Add('L',"<");
+			/// mathRulesDict.Add('E',"=");
+			/// mathRulesDict.Add('C', "in");
+			rule = argRule;
+			val = argVal;
+			customOperator = argCustomOperator;
+		}
+		public String generateStatement()
+		{
+			if (rule == 'C')
+			{
 
+			}
 		}
 	}
 }
