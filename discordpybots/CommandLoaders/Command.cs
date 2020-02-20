@@ -8,14 +8,14 @@ namespace discordpybots.CommandLoaders
 {
 	class Command
 	{
-		int type;
+		bool isCode;
 		String commandName;
 		dynamic commandClass;
 		CommandLoaders.CommandSettings commandSettings;
-		public Command(String argCommandName,int argType,dynamic argCommandClass)
+		public Command(String argCommandName,bool argIsCode,dynamic argCommandClass)
 		{
 			commandName = argCommandName;
-			type = argType;
+			isCode = argIsCode;
 			commandClass = argCommandName;
 		}
 	}

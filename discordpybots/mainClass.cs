@@ -8,5 +8,11 @@ namespace discordpybots
 {
 	class mainClass
 	{
+		ProjectLoaders.ProjectLoader_Debug debugProject = new ProjectLoaders.ProjectLoader_Debug();
+		ProjectLoaders.Project openedProject;
+		public mainClass()
+		{
+
+		}
 	}
 }
