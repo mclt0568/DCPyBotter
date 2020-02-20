@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="discordpybots.MainFunctionArea.CommandForms.discordMessageSimulator"
+﻿<UserControl x:Class="discordpybots.MainForms.discordMessageSimulator"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -25,7 +25,7 @@
                             <Border Padding="0 0 05 0">
                                 <TextBlock Text="Name" FontWeight="Bold" VerticalAlignment="Center" Foreground="#FFFFFF" FontSize="16" FontFamily="Open Sens,Calibri,Arial"/>
                             </Border>
-                            <Image Source="..\..\Resources\botTag.png" VerticalAlignment="Center"/>
+                            <Image Source="..\Resources\botTag.png" VerticalAlignment="Center"/>
                             <Border Padding="5 0 0 0">
                                 <TextBlock Text="XX/XX/XXXX" Foreground="#99AAB5" VerticalAlignment="Center"/>
                             </Border>
