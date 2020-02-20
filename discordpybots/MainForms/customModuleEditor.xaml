@@ -11,7 +11,7 @@
             <Border Margin="7 7">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Imported Module: " FontSize="18pt"/>
-                    <TextBlock Name="customModuleEditor" FontSize="18pt"/>
+                    <TextBlock Name="customModuleName" FontSize="18pt"/>
                 </StackPanel>
             </Border>
         </Grid>

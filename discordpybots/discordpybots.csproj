@@ -61,11 +61,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CommandLoaders\Command.cs" />
+    <Compile Include="CommandLoaders\CommandLoader.cs" />
     <Compile Include="CommandLoaders\commandSettings.cs" />
     <Compile Include="CustomClassLoaders\CustomClass.cs" />
     <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
     <Compile Include="ImportModuleLoaders\SubModules.cs" />
-    <Compile Include="mainClass.cs" />
+    <Compile Include="MainClass.cs" />
     <Compile Include="MainForms\commandSettings.xaml.cs">
       <DependentUpon>commandSettings.xaml</DependentUpon>
     </Compile>

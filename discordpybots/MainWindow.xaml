@@ -14,13 +14,12 @@
         <DockPanel Margin="0,0,0.4,0" LastChildFill="True">
             <TextBox DockPanel.Dock="Top" Name="projectName" IsReadOnly="True" Text="Hello world" Margin="0,0,0.4,0"/>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" DockPanel.Dock="Bottom" CanContentScroll="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0.4,0">
-                <TreeView BorderBrush="white">
-                    <TreeViewItem Header="Commands" >
-                        <TreeViewItem Header="test"/>
-                    </TreeViewItem><TreeViewItem Header="Custom Class" >
-                        <TreeViewItem Header="test"/>
-                    </TreeViewItem><TreeViewItem Header="Imported Libraries" >
-                        <TreeViewItem Header="test"/>
+                <TreeView Name="mainTreeView" BorderBrush="white">
+                    <TreeViewItem Header="Commands" Name="cmdTreeView" >
+                    </TreeViewItem>
+                    <TreeViewItem Header="Custom Class" Name="ccTreeView">
+                    </TreeViewItem>
+                    <TreeViewItem Header="Imported Libraries" Name="ilTreeViel">
                     </TreeViewItem>
                 </TreeView>
             </ScrollViewer>

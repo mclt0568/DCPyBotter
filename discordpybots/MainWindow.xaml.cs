@@ -21,20 +21,29 @@ namespace discordpybots
 	public partial class MainWindow : Window
 	{
 		TextBox codebox = new TextBox();
+		MainClass mainClass = new MainClass();
+		ProjectLoaders.Project openedProject;
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
+		void initProject()
+		{
+			mainClass.loadProject();
+			openedProject = mainClass.getProject();
+		}
 		void Button_Click(object sender, RoutedEventArgs e)
 		{
-			codebox.AcceptsReturn = true;
-			maindock.Children.Add(codebox);
+			initProject();
+			List<TreeViewItem> treeViewItems = mainClass.getCommandTreeViewItemByName(openedProject.commandList);
+			foreach (TreeViewItem i in treeViewItems)
+			{
+				cmdTreeView.Items.Add(i);
+			}
 		}
 		void Button_Click2(object sender, RoutedEventArgs e)
 		{
-			CommandByCodes command = new CommandByCodes("test",3);
-			command.addCode(codebox.Text);
-			MessageBox.Show(command.generatePythonCode('\t'));
+
 		}
 	}
 }

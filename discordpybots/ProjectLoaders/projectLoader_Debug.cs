@@ -17,8 +17,9 @@ namespace discordpybots.ProjectLoaders
 			List<ImportModuleLoaders.ImportedModules> imList = new List<ImportModuleLoaders.ImportedModules>();
 
 			CommandLoaders.CommandByCodes cmdBC = new CommandLoaders.CommandByCodes("test", 1);
-			CommandLoaders.Command cmd = new CommandLoaders.Command("Hi", true, cmdBC);
-			cmdList.Add(cmd);
+			cmdList.Add(new CommandLoaders.Command("Hi", true, cmdBC));
+			cmdList.Add(new CommandLoaders.Command("He", true, cmdBC));
+			cmdList.Add(new CommandLoaders.Command("Ho", true, cmdBC));
 
 			Settings settings = new Settings();
 			settings.botPrefix = ">";

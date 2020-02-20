@@ -8,9 +8,9 @@ namespace discordpybots.CommandLoaders
 {
 	class Command
 	{
-		bool isCode;
-		String commandName;
-		dynamic commandClass;
+		public bool isCode;
+		public String commandName;
+		public dynamic commandClass;
 		CommandLoaders.CommandSettings commandSettings;
 		public Command(String argCommandName,bool argIsCode,dynamic argCommandClass)
 		{
