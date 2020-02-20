@@ -36,6 +36,39 @@ namespace discordpybots.CommandLoaders
 			if (rule == 'C')
 			{
 
+				return ("( " + val + " in {} )");
+			}
+			else if (rule == 'S')
+			{
+				return ("( {}.startswith(" + val + ") )");
+			}
+			else if (rule == 'E')
+			{
+				return ("( {}.endswith(" + val + ") )");
+			}
+			else if (rule == 'I')
+			{
+				return ("({} == " + val + " )");
+			}
+			else if (rule == 'D')
+			{
+				return ("(float({}) == " + val + " )");
+			}
+			else if (rule == 'L')
+			{
+				return ("(float({}) < " + val + " )");
+			}
+			else if (rule == 'M')
+			{
+				return ("(float({}) > " + val + " )");
+			}
+			else if (rule == 'X')
+			{
+				return (val);
+			}
+			else
+			{
+				return "(False)";
 			}
 		}
 	}
