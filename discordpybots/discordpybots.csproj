@@ -60,6 +60,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommandLoaders\Command.cs" />
+    <Compile Include="CommandLoaders\commandSettings.cs" />
+    <Compile Include="CustomClassLoaders\CustomClass.cs" />
+    <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
+    <Compile Include="ImportModuleLoaders\SubModules.cs" />
+    <Compile Include="mainClass.cs" />
+    <Compile Include="MainForms\commandSettings.xaml.cs">
+      <DependentUpon>commandSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\customClassEditor.xaml.cs">
+      <DependentUpon>customClassEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\customModuleEditor.xaml.cs">
+      <DependentUpon>customModuleEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectLoaders\Project.cs" />
+    <Compile Include="ProjectLoaders\ProjectLoader_Debug.cs" />
+    <Compile Include="ProjectLoaders\Settings.cs" />
+    <Compile Include="Utils\CodeSpacer.cs" />
     <Compile Include="Utils\IntUtils.cs" />
     <Page Include="Dialogs\about.xaml">
       <SubType>Designer</SubType>
@@ -77,9 +96,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainForms\commandSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainForms\customClassEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainForms\customCodeEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainForms\customModuleEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainForms\customReplyEditor.xaml">
       <SubType>Designer</SubType>
