@@ -30,5 +30,27 @@ namespace discordpybots
 			}
 			return treeViewItemList;
 		}
+		public List<TreeViewItem> getCustomClassTreeViewItemByName(List<CustomClassLoaders.CustomClass> customClass)
+		{
+			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
+			foreach (CustomClassLoaders.CustomClass singleClass in customClass)
+			{
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleClass.className;
+				treeViewItemList.Add(element);
+			}
+			return treeViewItemList;
+		}
+		public List<TreeViewItem> getImportedModuleTreeViewItemByName(List<ImportModuleLoaders.ImportedModules> importedModules)
+		{
+			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
+			foreach (ImportModuleLoaders.ImportedModules singleModule in importedModules)
+			{
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleModule.moduleName;
+				treeViewItemList.Add(element);
+			}
+			return treeViewItemList;
+		}
 	}
 }

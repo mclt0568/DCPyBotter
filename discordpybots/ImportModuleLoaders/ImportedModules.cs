@@ -8,8 +8,8 @@ namespace discordpybots.ImportModuleLoaders
 {
 	class ImportedModules
 	{
-		String moduleName;
-		List<SubModules> subModuleList = new List<SubModules>();
+		public String moduleName;
+		public List<SubModules> subModuleList = new List<SubModules>();
 		public ImportedModules(String argModuleName)
 		{
 			moduleName = argModuleName;

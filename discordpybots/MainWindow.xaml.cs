@@ -35,15 +35,35 @@ namespace discordpybots
 		void Button_Click(object sender, RoutedEventArgs e)
 		{
 			initProject();
-			List<TreeViewItem> treeViewItems = mainClass.getCommandTreeViewItemByName(openedProject.commandList);
-			foreach (TreeViewItem i in treeViewItems)
+			cmdTreeView.Items.Clear();
+			List<TreeViewItem> treeViewItemsCmd = mainClass.getCommandTreeViewItemByName(openedProject.commandList);
+			List<TreeViewItem> treeViewItemsCcClass = mainClass.getCustomClassTreeViewItemByName(openedProject.customClassList);
+			List<TreeViewItem> treeViewItemsImportedModule = mainClass.getImportedModuleTreeViewItemByName(openedProject.importedModuleList);
+			foreach (TreeViewItem i in treeViewItemsCmd)
 			{
 				cmdTreeView.Items.Add(i);
+			}
+			foreach (TreeViewItem i in treeViewItemsCcClass)
+			{
+				ccTreeView.Items.Add(i);
+			}
+			foreach (TreeViewItem i in treeViewItemsImportedModule)
+			{
+				ilTreeViel.Items.Add(i);
 			}
 		}
 		void Button_Click2(object sender, RoutedEventArgs e)
 		{
 
+		}
+
+		private void newButton_Click(object sender, EventArgs e)
+		{
+			newElementButton.ContextMenu = new ContextMenu();
+			MenuItem ctxItem = new MenuItem();
+			ctxItem.Header = "test";
+			newElementButton.ContextMenu.Items.Add(ctxItem);
+			newElementButton.ContextMenu.
 		}
 	}
 }

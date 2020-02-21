@@ -21,6 +21,12 @@ namespace discordpybots.ProjectLoaders
 			cmdList.Add(new CommandLoaders.Command("He", true, cmdBC));
 			cmdList.Add(new CommandLoaders.Command("Ho", true, cmdBC));
 
+			ccList.Add(new CustomClassLoaders.CustomClass("sys1"));
+			ccList.Add(new CustomClassLoaders.CustomClass("sys2"));
+			ccList.Add(new CustomClassLoaders.CustomClass("sys3"));
+
+			imList.Add(new ImportModuleLoaders.ImportedModules("sys"));
+
 			Settings settings = new Settings();
 			settings.botPrefix = ">";
 			settings.showConsoleOutput = true;

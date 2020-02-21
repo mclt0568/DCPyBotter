@@ -11,9 +11,9 @@ namespace discordpybots.CustomClassLoaders
 		public String className;
 		public int constructorVariableCount;
 		public String code;
-		public CustomClass()
+		public CustomClass(String name)
 		{
-
+			className = name;
 		}
 	}
 }
