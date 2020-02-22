@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.ImportModuleLoaders
 {
-	class SubModules
+	public class SubModules
 	{
 		String submodulePath;
 		String importedAs;

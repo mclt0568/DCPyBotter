@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.CustomClassLoaders
 {
-	class CustomClass
+	public class CustomClass
 	{
 		public String className;
 		public int constructorVariableCount;

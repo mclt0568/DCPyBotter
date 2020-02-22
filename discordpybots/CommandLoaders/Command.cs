@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.CommandLoaders
 {
-	class Command
+	public class Command
 	{
 		public bool isCode;
 		public String commandName;

@@ -20,14 +20,55 @@ namespace discordpybots
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		ProjectLoaders.ProjectLoader_Debug debugProject = new ProjectLoaders.ProjectLoader_Debug();
 		TextBox codebox = new TextBox();
-		MainClass mainClass = new MainClass();
 		ProjectLoaders.Project openedProject;
 		Dialogs.NewItem newItemDialoge;
 		public MainWindow()
 		{
 			InitializeComponent();
 			initProject();
+		}
+		
+		//treeview getter
+		public List<TreeViewItem> getCommandTreeViewItemByName(List<CommandLoaders.Command> command)
+		{
+			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
+			foreach (CommandLoaders.Command singleCommand in command)
+			{
+				ContextMenu ctxMenu = new ContextMenu();
+				MenuItem removeCmdItem = new MenuItem();
+				removeCmdItem.Header = "Remove";
+
+				ctxMenu.Items.Add(removeCmdItem);
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleCommand.commandName;
+				element.ContextMenu = ctxMenu;
+				treeViewItemList.Add(element);
+			}
+			return treeViewItemList;
+		}
+		public List<TreeViewItem> getCustomClassTreeViewItemByName(List<CustomClassLoaders.CustomClass> customClass)
+		{
+			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
+			foreach (CustomClassLoaders.CustomClass singleClass in customClass)
+			{
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleClass.className;
+				treeViewItemList.Add(element);
+			}
+			return treeViewItemList;
+		}
+		public List<TreeViewItem> getImportedModuleTreeViewItemByName(List<ImportModuleLoaders.ImportedModules> importedModules)
+		{
+			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
+			foreach (ImportModuleLoaders.ImportedModules singleModule in importedModules)
+			{
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleModule.moduleName;
+				treeViewItemList.Add(element);
+			}
+			return treeViewItemList;
 		}
 
 		// MainMethodes
@@ -37,15 +78,14 @@ namespace discordpybots
 		}
 		void initProject()
 		{
-			mainClass.loadProject();
-			openedProject = mainClass.getProject();
+			openedProject = debugProject.load();
 		}
 		void updateListView()
 		{
 			cmdTreeView.Items.Clear();
-			List<TreeViewItem> treeViewItemsCmd = mainClass.getCommandTreeViewItemByName(openedProject.commandList);
-			List<TreeViewItem> treeViewItemsCcClass = mainClass.getCustomClassTreeViewItemByName(openedProject.customClassList);
-			List<TreeViewItem> treeViewItemsImportedModule = mainClass.getImportedModuleTreeViewItemByName(openedProject.importedModuleList);
+			List<TreeViewItem> treeViewItemsCmd = getCommandTreeViewItemByName(openedProject.commandList);
+			List<TreeViewItem> treeViewItemsCcClass = getCustomClassTreeViewItemByName(openedProject.customClassList);
+			List<TreeViewItem> treeViewItemsImportedModule = getImportedModuleTreeViewItemByName(openedProject.importedModuleList);
 			foreach (TreeViewItem i in treeViewItemsCmd)
 			{
 				cmdTreeView.Items.Add(i);
@@ -85,6 +125,10 @@ namespace discordpybots
 				else openedProject.importedModuleList.Add(newItem);
 				updateListView();
 			}
+		}
+		private void removeCommandFromProject(string Name)
+		{
+
 		}
 	}
 }
