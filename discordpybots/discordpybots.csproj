@@ -69,7 +69,6 @@
     </Compile>
     <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
     <Compile Include="ImportModuleLoaders\SubModules.cs" />
-    <Compile Include="MainClass.cs" />
     <Compile Include="MainForms\commandSettings.xaml.cs">
       <DependentUpon>commandSettings.xaml</DependentUpon>
     </Compile>

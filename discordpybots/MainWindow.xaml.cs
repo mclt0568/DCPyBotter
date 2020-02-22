@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using discordpybots.CommandLoaders;
 namespace discordpybots
 {
 	/// <summary>
@@ -24,6 +23,7 @@ namespace discordpybots
 		TextBox codebox = new TextBox();
 		ProjectLoaders.Project openedProject;
 		Dialogs.NewItem newItemDialoge;
+		CommandLoaders.CommandLoader cmdLoader = new CommandLoaders.CommandLoader();
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -39,7 +39,7 @@ namespace discordpybots
 				ContextMenu ctxMenu = new ContextMenu();
 				MenuItem removeCmdItem = new MenuItem();
 				removeCmdItem.Header = "Remove";
-
+				removeCmdItem.Click += (s, e) => { removeCommandFromProject(singleCommand.commandName); };
 				ctxMenu.Items.Add(removeCmdItem);
 				TreeViewItem element = new TreeViewItem();
 				element.Header = singleCommand.commandName;
@@ -117,7 +117,6 @@ namespace discordpybots
 			initNewItemWindow();
 			dynamic newItem = newItemDialoge.getItemInfo();
 			if (newItem.GetType() != 1.GetType()) {
-				MessageBox.Show("1");
 				if (newItem.GetType() == typeof(CommandLoaders.Command))
 					openedProject.commandList.Add(newItem);
 				else if (newItem.GetType() == typeof(CustomClassLoaders.CustomClass))
@@ -126,9 +125,11 @@ namespace discordpybots
 				updateListView();
 			}
 		}
-		private void removeCommandFromProject(string Name)
+		private void removeCommandFromProject(string name)
 		{
-
+			int index = cmdLoader.getCommandIndexByName(name,openedProject.commandList);
+			openedProject.commandList.RemoveAt(index);
+			updateListView();
 		}
 	}
 }
