@@ -64,10 +64,12 @@
     <Compile Include="CommandLoaders\CommandLoader.cs" />
     <Compile Include="CommandLoaders\commandSettings.cs" />
     <Compile Include="CustomClassLoaders\CustomClass.cs" />
+    <Compile Include="CustomClassLoaders\CustomClassLoader.cs" />
     <Compile Include="Dialogs\NewItem.xaml.cs">
       <DependentUpon>NewItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
+    <Compile Include="ImportModuleLoaders\ImportModuleLoader.cs" />
     <Compile Include="ImportModuleLoaders\SubModules.cs" />
     <Compile Include="MainForms\commandSettings.xaml.cs">
       <DependentUpon>commandSettings.xaml</DependentUpon>

@@ -34,7 +34,7 @@
                         </TreeViewItem>
                         <TreeViewItem Header="Custom Class" Name="ccTreeView">
                         </TreeViewItem>
-                        <TreeViewItem Header="Imported Libraries" Name="ilTreeViel">
+                        <TreeViewItem Header="Imported Libraries" Name="ilTreeView">
                         </TreeViewItem>
                     </TreeView>
                 </DockPanel>

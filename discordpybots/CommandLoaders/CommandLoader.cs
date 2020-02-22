@@ -9,7 +9,7 @@ namespace discordpybots.CommandLoaders
 	class CommandLoader
 	{
 		public CommandLoader(){}
-		public int getCommandIndexByName(String name,List<Command> commands){
+		public int getIndexByName(String name,List<Command> commands){
 			int index = 0;
 			foreach (Command i in commands)
 			{

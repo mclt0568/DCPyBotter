@@ -24,6 +24,8 @@ namespace discordpybots
 		ProjectLoaders.Project openedProject;
 		Dialogs.NewItem newItemDialoge;
 		CommandLoaders.CommandLoader cmdLoader = new CommandLoaders.CommandLoader();
+		CustomClassLoaders.CustomClassLoader ccLoader = new CustomClassLoaders.CustomClassLoader();
+		ImportModuleLoaders.ImportModuleLoader imLoader = new ImportModuleLoaders.ImportModuleLoader();
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -36,13 +38,14 @@ namespace discordpybots
 			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
 			foreach (CommandLoaders.Command singleCommand in command)
 			{
+				
+				TreeViewItem element = new TreeViewItem();
+				element.Header = singleCommand.commandName;
 				ContextMenu ctxMenu = new ContextMenu();
 				MenuItem removeCmdItem = new MenuItem();
 				removeCmdItem.Header = "Remove";
 				removeCmdItem.Click += (s, e) => { removeCommandFromProject(singleCommand.commandName); };
 				ctxMenu.Items.Add(removeCmdItem);
-				TreeViewItem element = new TreeViewItem();
-				element.Header = singleCommand.commandName;
 				element.ContextMenu = ctxMenu;
 				treeViewItemList.Add(element);
 			}
@@ -55,6 +58,12 @@ namespace discordpybots
 			{
 				TreeViewItem element = new TreeViewItem();
 				element.Header = singleClass.className;
+				ContextMenu ctxMenu = new ContextMenu();
+				MenuItem removeCcItem = new MenuItem();
+				removeCcItem.Header = "Remove";
+				removeCcItem.Click += (s, e) => { removeCustomClassFromProject(singleClass.className); };
+				ctxMenu.Items.Add(removeCcItem);
+				element.ContextMenu = ctxMenu;
 				treeViewItemList.Add(element);
 			}
 			return treeViewItemList;
@@ -66,6 +75,12 @@ namespace discordpybots
 			{
 				TreeViewItem element = new TreeViewItem();
 				element.Header = singleModule.moduleName;
+				ContextMenu ctxMenu = new ContextMenu();
+				MenuItem removeImItem = new MenuItem();
+				removeImItem.Header = "Remove";
+				removeImItem.Click += (s, e) => { removeImportedModuleFromProject(singleModule.moduleName); };
+				ctxMenu.Items.Add(removeImItem);
+				element.ContextMenu = ctxMenu;
 				treeViewItemList.Add(element);
 			}
 			return treeViewItemList;
@@ -83,6 +98,8 @@ namespace discordpybots
 		void updateListView()
 		{
 			cmdTreeView.Items.Clear();
+			ccTreeView.Items.Clear();
+			ilTreeView.Items.Clear();
 			List<TreeViewItem> treeViewItemsCmd = getCommandTreeViewItemByName(openedProject.commandList);
 			List<TreeViewItem> treeViewItemsCcClass = getCustomClassTreeViewItemByName(openedProject.customClassList);
 			List<TreeViewItem> treeViewItemsImportedModule = getImportedModuleTreeViewItemByName(openedProject.importedModuleList);
@@ -96,7 +113,7 @@ namespace discordpybots
 			}
 			foreach (TreeViewItem i in treeViewItemsImportedModule)
 			{
-				ilTreeViel.Items.Add(i);
+				ilTreeView.Items.Add(i);
 			}
 		}
 
@@ -125,10 +142,23 @@ namespace discordpybots
 				updateListView();
 			}
 		}
+		//  - Remove Functions
 		private void removeCommandFromProject(string name)
 		{
-			int index = cmdLoader.getCommandIndexByName(name,openedProject.commandList);
+			int index = cmdLoader.getIndexByName(name,openedProject.commandList);
 			openedProject.commandList.RemoveAt(index);
+			updateListView();
+		}
+		private void removeCustomClassFromProject(string name)
+		{
+			int index = ccLoader.getIndexByName(name, openedProject.customClassList);
+			openedProject.customClassList.RemoveAt(index);
+			updateListView();
+		}
+		private void removeImportedModuleFromProject(string name)
+		{
+			int index = imLoader.getIndexByName(name, openedProject.importedModuleList);
+			openedProject.importedModuleList.RemoveAt(index);
 			updateListView();
 		}
 	}
