@@ -19,9 +19,34 @@ namespace discordpybots.Dialogs
 	/// </summary>
 	public partial class NewItem : Window
 	{
+		bool confirmed = false;
 		public NewItem()
 		{
 			InitializeComponent();
+		}
+		public void cancelButton(object s,RoutedEventArgs e)
+		{
+			confirmed = false;
+			Close();
+		}
+		public void okButton(object s,RoutedEventArgs e)
+		{
+
+			if (itemSelector.Text != "" && itemName.Text.Trim() != "") { Close(); confirmed = true; }
+			else MessageBox.Show("Item Type or Name/Module Name cannot be empty.");
+		}
+		public dynamic getItemInfo()
+		{
+			ShowDialog();
+			if (confirmed) {
+				if (itemSelector.SelectedIndex == 0)
+					return new CommandLoaders.Command(itemName.Text, false, new CommandLoaders.CommandByRules(itemName.Text, 1));
+
+				else if (itemSelector.SelectedIndex == 1)
+					return new ImportModuleLoaders.ImportedModules(itemName.Text.Trim());
+				else return new CustomClassLoaders.CustomClass(itemName.Text.Trim());
+			}
+			else return -1;
 		}
 	}
 }

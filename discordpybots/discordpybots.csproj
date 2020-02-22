@@ -64,6 +64,9 @@
     <Compile Include="CommandLoaders\CommandLoader.cs" />
     <Compile Include="CommandLoaders\commandSettings.cs" />
     <Compile Include="CustomClassLoaders\CustomClass.cs" />
+    <Compile Include="Dialogs\NewItem.xaml.cs">
+      <DependentUpon>NewItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
     <Compile Include="ImportModuleLoaders\SubModules.cs" />
     <Compile Include="MainClass.cs" />
@@ -82,6 +85,10 @@
     <Compile Include="Utils\CodeSpacer.cs" />
     <Compile Include="Utils\IntUtils.cs" />
     <Page Include="Dialogs\about.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\NewItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,6 +205,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Comments.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Items\ImportModule.png" />
+    <Resource Include="Resources\Items\NewClass.png" />
+    <Resource Include="Resources\Items\NewCommand.png" />
+    <Resource Include="Resources\Items\NewFile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

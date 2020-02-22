@@ -23,18 +23,22 @@ namespace discordpybots
 		TextBox codebox = new TextBox();
 		MainClass mainClass = new MainClass();
 		ProjectLoaders.Project openedProject;
+		Dialogs.NewItem newItemDialoge;
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+		void initNewItemWindow()
+		{
+			newItemDialoge = new Dialogs.NewItem();
 		}
 		void initProject()
 		{
 			mainClass.loadProject();
 			openedProject = mainClass.getProject();
 		}
-		void Button_Click(object sender, RoutedEventArgs e)
+		void updateListView()
 		{
-			initProject();
 			cmdTreeView.Items.Clear();
 			List<TreeViewItem> treeViewItemsCmd = mainClass.getCommandTreeViewItemByName(openedProject.commandList);
 			List<TreeViewItem> treeViewItemsCcClass = mainClass.getCustomClassTreeViewItemByName(openedProject.customClassList);
@@ -52,18 +56,27 @@ namespace discordpybots
 				ilTreeViel.Items.Add(i);
 			}
 		}
+		void Button_Click(object sender, RoutedEventArgs e)
+		{
+			initProject();
+			updateListView();	
+		}
 		void Button_Click2(object sender, RoutedEventArgs e)
 		{
-
 		}
-
-		private void newButton_Click(object sender, EventArgs e)
+		private void newButton_Click(object sender, RoutedEventArgs e)
 		{
-			newElementButton.ContextMenu = new ContextMenu();
-			MenuItem ctxItem = new MenuItem();
-			ctxItem.Header = "test";
-			newElementButton.ContextMenu.Items.Add(ctxItem);
-			newElementButton.ContextMenu.
+			initNewItemWindow();
+			dynamic newItem = newItemDialoge.getItemInfo();
+			if (newItem.GetType() != 1.GetType()) {
+				MessageBox.Show("1");
+				if (newItem.GetType() == typeof(CommandLoaders.Command))
+					openedProject.commandList.Add(newItem);
+				else if (newItem.GetType() == typeof(CustomClassLoaders.CustomClass))
+					openedProject.customClassList.Add(newItem);
+				else openedProject.importedModuleList.Add(newItem);
+				updateListView();
+			}
 		}
 	}
 }
