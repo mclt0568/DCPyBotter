@@ -14,7 +14,7 @@
         <DockPanel Margin="0,0,0.4,0" LastChildFill="True">
             <TextBox DockPanel.Dock="Top" Name="projectName" IsReadOnly="True" Text="Hello world" Margin="0,0,0.4,0"/>
             <DockPanel LastChildFill="True" DockPanel.Dock="Top" >
-                <Button Click="newButton_Click" Background="#B0B0B0" DockPanel.Dock="Left" Width="20" Content="+" Name="newElementButton" HorizontalAlignment="Left">
+                <Button Click="newButton" Background="#B0B0B0" DockPanel.Dock="Left" Width="20" Content="+" Name="newElementButton" HorizontalAlignment="Left">
                    <!-- <Button.ContextMenu>
                         <ContextMenu>
                             <MenuItem Header="New Command" />
@@ -31,37 +31,6 @@
                 <DockPanel Background="#F0F0F0" LastChildFill="True">
                     <TreeView Background="#F0F0F0" Name="mainTreeView" BorderBrush="white">
                         <TreeViewItem Header="Commands" Name="cmdTreeView" >
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
-                            <TreeViewItem Header="3edswdew"/>
                         </TreeViewItem>
                         <TreeViewItem Header="Custom Class" Name="ccTreeView">
                         </TreeViewItem>

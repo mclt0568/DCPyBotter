@@ -27,7 +27,10 @@ namespace discordpybots
 		public MainWindow()
 		{
 			InitializeComponent();
+			initProject();
 		}
+
+		// MainMethodes
 		void initNewItemWindow()
 		{
 			newItemDialoge = new Dialogs.NewItem();
@@ -56,15 +59,20 @@ namespace discordpybots
 				ilTreeViel.Items.Add(i);
 			}
 		}
-		void Button_Click(object sender, RoutedEventArgs e)
+
+		// Debug Events
+		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			initProject();
 			updateListView();	
 		}
-		void Button_Click2(object sender, RoutedEventArgs e)
+		private void Button_Click2(object sender, RoutedEventArgs e)
 		{
 		}
-		private void newButton_Click(object sender, RoutedEventArgs e)
+
+		// Events
+		//  -  Project Explorer
+		private void newButton(object sender, RoutedEventArgs e)
 		{
 			initNewItemWindow();
 			dynamic newItem = newItemDialoge.getItemInfo();

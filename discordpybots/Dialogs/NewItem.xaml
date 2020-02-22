@@ -22,7 +22,7 @@
                 <Border Padding="5">
                     <Button Width="60" Content="Add" Click="okButton"/>
                 </Border>
-                <Border Padding="5">
+                <Border Padding="5">  
                     <Button Width="60" Content="Cancel" Click="cancelButton"/>
                 </Border>
             </StackPanel>

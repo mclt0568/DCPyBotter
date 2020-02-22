@@ -24,8 +24,13 @@ namespace discordpybots
 			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
 			foreach (CommandLoaders.Command singleCommand in command)
 			{
+				ContextMenu ctxMenu = new ContextMenu();
+				MenuItem removeCmdItem = new MenuItem();
+				removeCmdItem.Header = "Remove";
+				ctxMenu.Items.Add(removeCmdItem);
 				TreeViewItem element = new TreeViewItem();
 				element.Header = singleCommand.commandName;
+				element.ContextMenu = ctxMenu;
 				treeViewItemList.Add(element);
 			}
 			return treeViewItemList;
