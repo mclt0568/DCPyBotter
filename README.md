@@ -19,4 +19,4 @@ This is my **first time** using git properly. This is my **first** .net GUI whic
 Just clone the whole thing and open discordpybots.sln with Visual Studio. Choosing Build Solution option from the Build menu should compile it, no additional things needed.
 
 ### Contributing
-Contributing is not opened until I figure out how GitHub exactly works (´・ω・).
+Contributing is not opened until I figure out how exactly GitHub works (´・ω・).
