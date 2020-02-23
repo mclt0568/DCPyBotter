@@ -116,6 +116,26 @@ namespace discordpybots
 				ilTreeView.Items.Add(i);
 			}
 		}
+		
+		// Remove Functions
+		private void removeCommandFromProject(string name)
+		{
+			int index = cmdLoader.getIndexByName(name, openedProject.commandList);
+			openedProject.commandList.RemoveAt(index);
+			updateListView();
+		}
+		private void removeCustomClassFromProject(string name)
+		{
+			int index = ccLoader.getIndexByName(name, openedProject.customClassList);
+			openedProject.customClassList.RemoveAt(index);
+			updateListView();
+		}
+		private void removeImportedModuleFromProject(string name)
+		{
+			int index = imLoader.getIndexByName(name, openedProject.importedModuleList);
+			openedProject.importedModuleList.RemoveAt(index);
+			updateListView();
+		}
 
 		// Debug Events
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -142,24 +162,6 @@ namespace discordpybots
 				updateListView();
 			}
 		}
-		//  - Remove Functions
-		private void removeCommandFromProject(string name)
-		{
-			int index = cmdLoader.getIndexByName(name,openedProject.commandList);
-			openedProject.commandList.RemoveAt(index);
-			updateListView();
-		}
-		private void removeCustomClassFromProject(string name)
-		{
-			int index = ccLoader.getIndexByName(name, openedProject.customClassList);
-			openedProject.customClassList.RemoveAt(index);
-			updateListView();
-		}
-		private void removeImportedModuleFromProject(string name)
-		{
-			int index = imLoader.getIndexByName(name, openedProject.importedModuleList);
-			openedProject.importedModuleList.RemoveAt(index);
-			updateListView();
-		}
+		
 	}
 }
