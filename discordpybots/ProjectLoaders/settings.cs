@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.ProjectLoaders
 {
-	class Settings
+	public class Settings
 	{
 		public bool showConsoleOutput;
 		public String pythonPath;

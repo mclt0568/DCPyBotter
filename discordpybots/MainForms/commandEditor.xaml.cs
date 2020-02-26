@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using discordpybots.FormControls;
 
 namespace discordpybots.MainForms
 {
@@ -21,8 +21,10 @@ namespace discordpybots.MainForms
 	/// </summary>
 	public partial class commandEditor : UserControl
 	{
-		public commandEditor()
+		CommandForm parentControl;
+		public commandEditor(CommandForm argControl)
 		{
+			parentControl = argControl;
 			InitializeComponent();
 		}
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.ProjectLoaders
 {
-	class Project
+	public class Project
 	{
 		public List<CommandLoaders.Command> commandList;
 		public List<CustomClassLoaders.CustomClass> customClassList;

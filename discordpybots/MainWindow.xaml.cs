@@ -21,11 +21,12 @@ namespace discordpybots
 	{
 		ProjectLoaders.ProjectLoader_Debug debugProject = new ProjectLoaders.ProjectLoader_Debug();
 		TextBox codebox = new TextBox();
-		ProjectLoaders.Project openedProject;
+		public ProjectLoaders.Project openedProject;
 		Dialogs.NewItem newItemDialoge;
 		CommandLoaders.CommandLoader cmdLoader = new CommandLoaders.CommandLoader();
 		CustomClassLoaders.CustomClassLoader ccLoader = new CustomClassLoaders.CustomClassLoader();
 		ImportModuleLoaders.ImportModuleLoader imLoader = new ImportModuleLoaders.ImportModuleLoader();
+		dynamic currentPanel;
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -38,19 +39,25 @@ namespace discordpybots
 			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
 			foreach (CommandLoaders.Command singleCommand in command)
 			{
-				
+				//treeview item
 				TreeViewItem element = new TreeViewItem();
 				element.Header = singleCommand.commandName;
+				element.MouseLeftButtonUp += (s, e) => { loadCommandPanel(singleCommand.commandName); };
+
+				//context menu
 				ContextMenu ctxMenu = new ContextMenu();
 				MenuItem removeCmdItem = new MenuItem();
 				removeCmdItem.Header = "Remove";
 				removeCmdItem.Click += (s, e) => { removeCommandFromProject(singleCommand.commandName); };
 				ctxMenu.Items.Add(removeCmdItem);
 				element.ContextMenu = ctxMenu;
+
+				//add item
 				treeViewItemList.Add(element);
 			}
 			return treeViewItemList;
 		}
+
 		public List<TreeViewItem> getCustomClassTreeViewItemByName(List<CustomClassLoaders.CustomClass> customClass)
 		{
 			List<TreeViewItem> treeViewItemList = new List<TreeViewItem>();
@@ -117,6 +124,13 @@ namespace discordpybots
 			}
 		}
 		
+		//Panels
+		void loadCommandPanel(String name)
+		{
+			currentPanel = new FormControls.CommandForm(this,name);
+			currentPanel.loadPanel();
+		}
+
 		// Remove Functions
 		private void removeCommandFromProject(string name)
 		{

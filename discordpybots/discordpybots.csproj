@@ -68,6 +68,7 @@
     <Compile Include="Dialogs\NewItem.xaml.cs">
       <DependentUpon>NewItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormControls\CommandForm.cs" />
     <Compile Include="ImportModuleLoaders\ImportedModules.cs" />
     <Compile Include="ImportModuleLoaders\ImportModuleLoader.cs" />
     <Compile Include="ImportModuleLoaders\SubModules.cs" />
