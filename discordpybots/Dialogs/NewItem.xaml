@@ -28,7 +28,7 @@
             </StackPanel>
             <Border Padding="5">
                 <StackPanel>
-                    <ComboBox Name="itemSelector">
+                    <ComboBox Name="itemSelector" SelectionChanged="ItemSelector_SelectionChanged">
                         <ComboBoxItem Content="Command" />
                         <ComboBoxItem Content="Module/Library" />
                         <ComboBoxItem Content="Custom Class" />

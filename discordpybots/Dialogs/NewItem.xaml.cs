@@ -48,5 +48,21 @@ namespace discordpybots.Dialogs
 			}
 			else return -1;
 		}
+
+		private void ItemSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			switch (itemSelector.SelectedIndex)
+			{
+				case 0:
+					newIcon.Source = new BitmapImage(new Uri(@"\Resources\Items\NewCommand.png", UriKind.Relative));
+					break;
+				case 1:
+					newIcon.Source = new BitmapImage(new Uri(@"\Resources\Items\ImportModule.png",UriKind.Relative));
+					break;
+				case 2:
+					newIcon.Source = new BitmapImage(new Uri(@"\Resources\Items\NewClass.png", UriKind.Relative));
+					break;
+			}
+		}
 	}
 }
