@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:discordpybots.Dialogs"
         mc:Ignorable="d"
-        Title="New Item" Height="139.6" Width="266.914" WindowState="Normal" ResizeMode="NoResize">
+        Title="New Item" Height="147.598" Width="333.806" WindowState="Normal" ResizeMode="NoResize">
     <DockPanel>
-        <DockPanel Background="#B0B0B0" Width="70" HorizontalAlignment="Left">
+        <DockPanel Background="#FF3F3F46" Width="70" HorizontalAlignment="Left">
             <StackPanel>
                 <Border Margin="10">
                     <Image Name="newIcon" Source="../Resources/Items/NewFile.png"/>
                 </Border>
                 <Border Margin="10 0">
-                    <TextBlock Text="New Item"/>
+                    <TextBlock Text="New Item" Foreground="#c9c9cf"/>
                 </Border>
             </StackPanel>
         </DockPanel>

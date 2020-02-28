@@ -1,3 +1,11 @@
 In python:
-	Bot Client: CLIENT
+	Bot Client : CLIENT
 	Bot Token : TOKEN
+
+Color scheme:
+	Gray : #3f3f46
+	Secondary Gray : #707081
+	LightGray : #c9c9cf
+	Blue : 0088cc
+	Darken Blue : #004466
+	Light Blue : #bcdbeb
