@@ -16,7 +16,7 @@ namespace discordpybots.CommandLoaders
 		{
 			commandName = argCommandName;
 			isCode = argIsCode;
-			commandClass = argCommandName;
+			commandClass = argCommandClass;
 		}
 	}
 }
