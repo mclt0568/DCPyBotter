@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace discordpybots.CommandLoaders
 {
-	class CommandByRules
+	public class CommandByRules
 	{
 		String commandName;
 		int argCount;

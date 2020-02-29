@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace discordpybots.CommandLoaders
 {
-	class CommandByCodes
+	public class CommandByCodes
 	{
 		String commandName;
 		int argCount;
-		String code = "";
+		public String code = "";
 		public CommandByCodes(String name, int args)
 		{
 			commandName = name;

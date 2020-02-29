@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using discordpybots;
-
 namespace discordpybots.ProjectLoaders
 {
 	class ProjectLoader_Debug

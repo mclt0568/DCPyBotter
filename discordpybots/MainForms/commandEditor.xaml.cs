@@ -22,7 +22,7 @@ namespace discordpybots.MainForms
 	public partial class commandEditor : UserControl
 	{
 		CommandForm parentControl;
-		CommandLoaders.Command command;
+		public CommandLoaders.Command command;
 		dynamic editAreaClass;
 		public commandEditor(CommandForm argControl,CommandLoaders.Command argCommand)
 		{
@@ -35,16 +35,17 @@ namespace discordpybots.MainForms
 			switch (command.isCode)
 			{
 				case true:
-					editAreaClass = new MainForms.customCodeEditor();
+					editAreaClass = new MainForms.customCodeEditor(command.commandClass, this);
 					break;
 				case false:
-					editAreaClass = new MainForms.customClassEditor();
+					editAreaClass = new MainForms.customReplyEditor();
 					break;
 			}
 			editArea.Children.Clear();
 			editArea.Children.Add(editAreaClass);
 		}
 		public void init() {
+			commandNameCaption.Text = command.commandName;
 			setupSubForm();
 		}
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

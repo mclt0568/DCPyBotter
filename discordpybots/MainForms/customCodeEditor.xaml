@@ -11,7 +11,7 @@
             <TextBox AcceptsReturn="True" DockPanel.Dock="Top" Name="functionDefinitionLines" IsReadOnly="True" Background="#FFF1F1F1" FontFamily="Ubuntu Mono,Consolas"/>
             <DockPanel LastChildFill="True">
                 <TextBox AcceptsReturn="True" IsReadOnly="True" FontFamily="Ubuntu Mono,Consolas" Width="40" Name="lineNumberBox" DockPanel.Dock="Left" Background="#FFE8E8E8" />
-                <TextBox AcceptsReturn="True" FontFamily="Ubuntu Mono,Consolas" Name="codingIDE"></TextBox>
+                <TextBox AcceptsReturn="True" TextChanged="codeTextChange" FontFamily="Ubuntu Mono,Consolas" Name="codingIDE"></TextBox>
             </DockPanel>
         </DockPanel>
     </Border>

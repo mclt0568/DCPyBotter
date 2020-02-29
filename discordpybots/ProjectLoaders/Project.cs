@@ -21,8 +21,5 @@ namespace discordpybots.ProjectLoaders
 			customClassList = argCustomClassList;
 			importedModuleList = argImportModuleLoader;
 		}
-		void compile() {;}
-		void debug() {;}
-		void compileToFile() {;}
 	}
 }

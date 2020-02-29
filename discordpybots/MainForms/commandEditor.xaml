@@ -36,9 +36,9 @@
                 </Border>
             </StackPanel>
             <ScrollViewer VerticalScrollBarVisibility="auto">
-            <StackPanel Name="editArea">
+            <DockPanel LastChildFill="True" Name="editArea">
         
-            </StackPanel>
+            </DockPanel>
             </ScrollViewer>
         </DockPanel>
     </DockPanel>

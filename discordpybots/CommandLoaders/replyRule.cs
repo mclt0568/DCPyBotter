@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 /// S Starts With
 /// E Ends With
 /// M More Then
-/// L Less Then 
+/// L Less Then
 /// I Identity
 /// X Custom Operator
 
 namespace discordpybots.CommandLoaders
 {
-	class ReplyRule
+	public class ReplyRule
 	{
 		// IDictionary<Char, String> mathRulesDict = new Dictionary<Char, String>();
 		Char rule;

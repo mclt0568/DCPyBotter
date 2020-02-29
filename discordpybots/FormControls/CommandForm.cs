@@ -27,6 +27,21 @@ namespace discordpybots.FormControls
 			mainWindow.maindock.Children.Clear();
 			mainWindow.maindock.Children.Add(mainPanel);
 		}
-		public void updateProject() { }
+		public void updateRule(){}
+		public void updateCode(String code)
+		{
+			command.commandClass.code = code;
+		}
+		public void updateCommandClass(dynamic content) {
+			switch (command.isCode)
+			{
+				case true:
+					updateCode(content);
+					break;
+				case false:
+					updateRule();
+					break;
+			}
+		}
 	}
 }
