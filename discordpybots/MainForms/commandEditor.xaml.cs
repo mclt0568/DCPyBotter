@@ -35,7 +35,7 @@ namespace discordpybots.MainForms
 			switch (command.isCode)
 			{
 				case true:
-					editAreaClass = new MainForms.customCodeEditor(command.commandClass, this);
+					editAreaClass = new MainForms.customCodeEditor(command.commandClass, this,command);
 					break;
 				case false:
 					editAreaClass = new MainForms.customReplyEditor();

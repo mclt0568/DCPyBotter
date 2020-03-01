@@ -23,15 +23,19 @@ namespace discordpybots.MainForms
 		CommandLoaders.CommandByCodes commandClass;
 		commandEditor editor;
 		String header = "";
-		public customCodeEditor(CommandLoaders.CommandByCodes argCommandClass, commandEditor argEditor)
+		CommandLoaders.Command command;
+		public customCodeEditor(CommandLoaders.CommandByCodes argCommandClass, commandEditor argEditor, CommandLoaders.Command argCommand)
 		{
 			editor = argEditor;
 			commandClass = argCommandClass;
-			InitializeComponent();
+			InitializeComponent(); setCommand(argCommand);
 			updateToForm();
+
 		}
+		void setCommand(CommandLoaders.Command argCommand) { command = argCommand; }
 		public void updateToClass()
 		{
+
 			editor.command.commandClass.code = codingIDE.Text;
 		}
 		public void setHeader(String argHeader)
@@ -47,6 +51,7 @@ namespace discordpybots.MainForms
 			for (int i = 0; i < splitted; i++)indexing += "\n" + (i+1).ToString();
 			indexing = indexing.Substring(1);
 			lineNumberBox.Text = indexing;
+			codingIDE.Text = commandClass.code;
 		}
 		//event handler
 		private void codeTextChange(object sender, TextChangedEventArgs e)

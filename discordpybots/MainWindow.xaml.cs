@@ -159,7 +159,9 @@ namespace discordpybots
 		}
 		private void Button_Click2(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show(openedProject.commandList[1].commandClass.code);
+			int index = cmdLoader.getIndexByName(debugtxt.Text,openedProject.commandList);
+			MessageBox.Show(index.ToString());
+			//MessageBox.Show(openedProject.commandList[index].commandClass.code);
 		}
 
 		// Events

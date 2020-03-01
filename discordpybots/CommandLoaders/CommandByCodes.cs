@@ -11,6 +11,7 @@ namespace discordpybots.CommandLoaders
 		String commandName;
 		int argCount;
 		public String code = "";
+		Command command;
 		public CommandByCodes(String name, int args)
 		{
 			commandName = name;

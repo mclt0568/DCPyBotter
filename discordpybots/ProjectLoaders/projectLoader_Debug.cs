@@ -14,11 +14,9 @@ namespace discordpybots.ProjectLoaders
 			List<CommandLoaders.Command> cmdList = new List<CommandLoaders.Command>();
 			List<CustomClassLoaders.CustomClass> ccList = new List<CustomClassLoaders.CustomClass>();
 			List<ImportModuleLoaders.ImportedModules> imList = new List<ImportModuleLoaders.ImportedModules>();
-
-			CommandLoaders.CommandByCodes cmdBC = new CommandLoaders.CommandByCodes("test", 1);
-			cmdList.Add(new CommandLoaders.Command("Hi", true, cmdBC));
-			cmdList.Add(new CommandLoaders.Command("He", true, cmdBC));
-			cmdList.Add(new CommandLoaders.Command("Ho", true, cmdBC));
+			cmdList.Add(new CommandLoaders.Command("Hi", true, new CommandLoaders.CommandByCodes("test", 1)));
+			cmdList.Add(new CommandLoaders.Command("He", true, new CommandLoaders.CommandByCodes("test", 1)));
+			cmdList.Add(new CommandLoaders.Command("Ho", true, new CommandLoaders.CommandByCodes("test", 1)));
 
 			ccList.Add(new CustomClassLoaders.CustomClass("sys1"));
 			ccList.Add(new CustomClassLoaders.CustomClass("sys2"));
