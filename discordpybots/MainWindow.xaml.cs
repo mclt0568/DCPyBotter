@@ -102,7 +102,7 @@ namespace discordpybots
 		{
 			openedProject = debugProject.load();
 		}
-		void updateListView()
+		public void updateListView()
 		{
 			cmdTreeView.Items.Clear();
 			ccTreeView.Items.Clear();
@@ -125,12 +125,11 @@ namespace discordpybots
 		}
 		
 		//Panels
-		void loadCommandPanel(String name)
+		public void loadCommandPanel(String name)
 		{
 			currentPanel = new FormControls.CommandForm(this,name);
 			currentPanel.loadPanel();
 		}
-
 		// Remove Functions
 		private void removeCommandFromProject(string name)
 		{
@@ -159,10 +158,20 @@ namespace discordpybots
 		}
 		private void Button_Click2(object sender, RoutedEventArgs e)
 		{
-			int index = cmdLoader.getIndexByName(debugtxt.Text,openedProject.commandList);
-			MessageBox.Show(index.ToString());
+			Utils.IntUtils iutil = new Utils.IntUtils();
+			MessageBox.Show(TestText.Text);
+			try
+			{
+				int a = Int16.Parse(TestText.Text);
+				MessageBox.Show(a.ToString());
+
+			}
+			catch (System.FormatException) {
+				MessageBox.Show("err");
+			}
+
 			//MessageBox.Show(openedProject.commandList[index].commandClass.code);
-		}
+			}
 
 		// Events
 		//  -  Project Explorer

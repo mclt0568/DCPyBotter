@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace discordpybots.CommandLoaders
 {
-	class CommandSettings
+	public class CommandSettings
 	{
-		String commandName;
-		int argumentCount;
-		public CommandSettings(String argName, int argArgCount)
+		public int argumentCount;
+		public CommandSettings(int argArgCount)
 		{
-			commandName = argName;
 			argumentCount = argArgCount;
 		}
 	}

@@ -29,7 +29,7 @@
             <StackPanel DockPanel.Dock="Bottom">
                 <Border Margin="0 5 10 5">
                     <TextBlock HorizontalAlignment="Right">
-                        <Hyperlink>
+                        <Hyperlink Click="settingLinkClick">
                             <TextBlock Text="Command Settings"/>
                         </Hyperlink>
                     </TextBlock>

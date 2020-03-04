@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:discordpybots.Dialogs"
         mc:Ignorable="d"
-        Title="New Item" Height="147.598" Width="333.806" WindowState="Normal" ResizeMode="NoResize">
+        Title="New Item" Height="122.23" Width="333.806" WindowState="Normal" ResizeMode="NoResize">
     <DockPanel>
         <DockPanel Background="#FF3F3F46" Width="70" HorizontalAlignment="Left">
             <StackPanel>
@@ -41,9 +41,7 @@
                     </DockPanel>
                     <Border Margin="0 5 0 0"/>
                     <TextBlock  HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                        <Hyperlink>
-                            <TextBlock Text="More Options"/>
-                        </Hyperlink>
+                        <Hyperlink/>
                     </TextBlock>
                 </StackPanel>
             </Border>

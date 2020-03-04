@@ -8,9 +8,9 @@ namespace discordpybots.Utils
 {
 	class IntUtils
 	{
-		int i = 0;
 		public int convertFromString(String intString)
 		{
+			int i = 0;
 			if (!Int32.TryParse(intString, out i))
 			{
 				i = -1;

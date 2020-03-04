@@ -19,7 +19,7 @@ namespace discordpybots.FormControls
 			project = mainWindow.openedProject;
 			int index = cmdLoader.getIndexByName(commandName, project.commandList);
 			command = project.commandList[index];
-			mainPanel = new MainForms.commandEditor(this, command);
+			mainPanel = new MainForms.commandEditor(this, command,mainWindow);
 		}
 		public void loadPanel()
 		{

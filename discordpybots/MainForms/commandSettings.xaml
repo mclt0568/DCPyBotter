@@ -17,7 +17,7 @@
                                 <Border Margin="0 0 5 0">
                                     <TextBlock Text="Command Name"/>
                                 </Border>
-                                <TextBox/>
+                                <TextBox Name="commandNameTextbox"/>
                             </DockPanel>
                         </Border>
                         <Border Margin="5">
@@ -25,7 +25,7 @@
                                 <Border Margin="0 0 5 0">
                                     <TextBlock Text="Argument Counts (Enter -1 for non-limited)"/>
                                 </Border>
-                                <TextBox/>
+                                <TextBox Name="argCountTextbox"/>
                             </DockPanel>
                         </Border>
                     </StackPanel>
@@ -33,9 +33,9 @@
             </StackPanel>
             <DockPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="OK" Width="85" Height="18" VerticalAlignment="Bottom"/>
+                    <Button Content="OK" Width="85" Height="18" VerticalAlignment="Bottom" Click="okButton"/>
                     <Border Margin="3"/>
-                    <Button Content="Cancel" Width="85" Height="18" VerticalAlignment="Bottom"/>
+                    <Button Content="Cancel" Width="85" Height="18" VerticalAlignment="Bottom" Click="cancelButton"/>
                 </StackPanel>
             </DockPanel>
         </DockPanel>

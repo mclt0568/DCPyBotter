@@ -21,11 +21,13 @@ namespace discordpybots.MainForms
 	/// </summary>
 	public partial class commandEditor : UserControl
 	{
+		MainWindow mainWindow;
 		CommandForm parentControl;
 		public CommandLoaders.Command command;
 		dynamic editAreaClass;
-		public commandEditor(CommandForm argControl,CommandLoaders.Command argCommand)
+		public commandEditor(CommandForm argControl,CommandLoaders.Command argCommand,MainWindow argMainWindow)
 		{
+			mainWindow = argMainWindow;
 			parentControl = argControl;
 			command = argCommand;
 			InitializeComponent();
@@ -51,6 +53,13 @@ namespace discordpybots.MainForms
 		private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 
+		}
+
+		private void settingLinkClick(object sender, RoutedEventArgs e)
+		{
+			MainForms.commandSettings settingWindows = new MainForms.commandSettings(command,mainWindow);
+			settingWindows.init();
+			settingWindows.Show();
 		}
 	}
 }

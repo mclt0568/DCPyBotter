@@ -19,9 +19,56 @@ namespace discordpybots.MainForms
 	/// </summary>
 	public partial class commandSettings : Window
 	{
-		public commandSettings()
+		protected bool isOk = false;
+		CommandLoaders.Command command;
+		MainWindow mainWindow;
+		public commandSettings(CommandLoaders.Command cmd, MainWindow argMainWindow)
 		{
+			command = cmd;
+			mainWindow = argMainWindow;
 			InitializeComponent();
+		}
+		public void init()
+		{
+			argCountTextbox.Text = command.commandSetting.argumentCount.ToString();
+			commandNameTextbox.Text = command.commandName;
+		}
+		void okButton(object s, RoutedEventArgs e)
+		{
+			try
+			{
+				int a = Int16.Parse(argCountTextbox.Text);
+				if ((a < -2 )||(a>255)){
+					MessageBox.Show(argCountTextbox.Text + " is not a valid number 1");
+				}
+				else { 
+				isOk = true;
+				Close();
+				}
+			}
+			catch
+			{
+				MessageBox.Show(argCountTextbox.Text + " is not a valid number");
+			}
+		}
+		void cancelButton(object s ,RoutedEventArgs e)
+		{
+			isOk = false;
+			Close();
+		}
+		public void set(){
+			ShowDialog();
+			switch (isOk)
+			{
+				case true:
+					command.commandName = commandNameTextbox.Text;
+					command.commandSetting.argumentCount = Int16.Parse(argCountTextbox.Text);
+					mainWindow.updateListView();
+					mainWindow.loadCommandPanel(command.commandName);
+					break;
+				case false:
+					break;
+			}
 		}
 	}
 }

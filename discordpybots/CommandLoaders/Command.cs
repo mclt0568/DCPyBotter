@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 namespace discordpybots.CommandLoaders
 {
 	public class Command
-	{
+	{	
 		public bool isCode;
 		public String commandName;
 		public dynamic commandClass;
-		CommandLoaders.CommandSettings commandSettings;
+		public CommandLoaders.CommandSettings commandSetting;
 		public Command(String argCommandName,bool argIsCode,dynamic argCommandClass)
 		{
 			commandName = argCommandName;
 			isCode = argIsCode;
 			commandClass = argCommandClass;
+			commandSetting = new CommandSettings(1);
 		}
 	}
 }
